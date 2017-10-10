@@ -1,0 +1,10 @@
+@import "variables";
+
+=resp_dim($css-prop,$number)
+	#{$css-prop}: ($number * $slider-coef)+vw
+
+=resp_dim_move($x: 0, $y: 0)
+	transform: translate($x * $slider-coef+vw,$y * $slider-coef+vw)
+
+=resp_dim_move_scale($x: 0, $y: 0, $scale: 0)
+	transform: translate($x * $slider-coef+vw,$y * $slider-coef+vw) scale($scale)

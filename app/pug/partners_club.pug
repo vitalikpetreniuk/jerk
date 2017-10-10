@@ -1,0 +1,227 @@
+<!DOCTYPE html>
+html(lang="en")
+	head
+		meta(charset="UTF-8")
+		meta(name="viewport" content="initial-scale=1.0001, minimum-scale=1.0001, maximum-scale=1.0001, user-scalable=no")
+		title "Рывок" в вашем клубе
+		link(rel="stylesheet", href="https://fonts.googleapis.com/css?family=Ubuntu:300,300i,400,400i,500,500i,700,700i")
+		link(rel="stylesheet", href="https://fonts.googleapis.com/css?family=Oswald:300,400")
+		link(rel="stylesheet", href="https://fonts.googleapis.com/css?family=Open+Sans:400,600i,700")
+		link(rel="stylesheet", href="css/libs.min.css")
+		link(rel="stylesheet", href="css/partners.css")
+		script(src="js/libs.min.js")
+		script(src="js/mobile-chrome-vh-fix.js")
+		script(src="js/main.js")
+		script(src="js/partners.js")
+
+	body
+
+		include parts/side_menu_inner.pug
+		
+		.main-wrapper.inner
+			.ask.inner #[.text Задать вопрос]
+				include ../img/svg/bw-plashka-vopros.svg
+			.get-lesson.inner
+				div Отправить заявку
+				include ../img/svg/bw-plashka-zapis-na-tren.svg
+
+			.content-block
+				.main-block
+					.bg-photos-logo
+						img(src="img/partners/transparent-logo-bg.png", alt="")
+					.bg-photos
+						.bg-photo
+							img(src="img/partners/photo-behind-logo.jpg", alt="")
+						.bg-photo
+							img(src="img/partners/photo-behind-logo3.jpg", alt="")
+						.bg-photo
+							img(src="img/partners/photo-behind-logo4.jpg", alt="")
+						.bg-photo
+							img(src="img/partners/photo-behind-logo.jpg", alt="")
+						.bg-photo
+							img(src="img/partners/photo-behind-logo3.jpg", alt="")
+						.bg-photo
+							img(src="img/partners/photo-behind-logo4.jpg", alt="")
+						.bg-photo
+							img(src="img/partners/photo-behind-logo.jpg", alt="")
+						.bg-photo
+							img(src="img/partners/photo-behind-logo3.jpg", alt="")
+						.bg-photo
+							img(src="img/partners/photo-behind-logo4.jpg", alt="")
+						.bg-photo
+							img(src="img/partners/photo-behind-logo.jpg", alt="")
+						.bg-photo
+							img(src="img/partners/photo-behind-logo3.jpg", alt="")
+						.bg-photo
+							img(src="img/partners/photo-behind-logo4.jpg", alt="")
+						.bg-photo
+							img(src="img/partners/photo-behind-logo.jpg", alt="")
+						.bg-photo
+							img(src="img/partners/photo-behind-logo3.jpg", alt="")
+						.bg-photo
+							img(src="img/partners/photo-behind-logo4.jpg", alt="")
+					.partner-offer
+						.photo-in-rect
+							.bottom-border
+							img(src="img/partners/max-in-rect.png", alt="")
+						.text-block
+							.orange-block.first партнерское предложение
+							.partner-text(id="partnerText") За пять лет развития Рывка я прошёл, что называется, «огонь, воду и медные трубы». Таким образом, мне удалось создать идеально работающий механизм. #[br] #[br] Сейчас я могу с гордостью заявить, что готов обеспечить партнерам:
+							.offer-items.mobile-hidden
+								.item 
+									.item-text минимальные#[br]затраты и риски
+									.line-wrapper
+										.line
+								.item
+									.line-wrapper
+										.line
+									.item-text высокий уровень#[br]прибыли
+								.item 
+									.item-text быструю#[br]окупаемость
+									.line-wrapper
+										.line
+						.offer-items.mobile-visible
+							.item 
+								.item-text минимальные#[br]затраты и риски
+								.line-wrapper
+									.line
+							.item 
+								.line-wrapper
+									.line
+								.item-text высокий уровень#[br]прибыли
+							.item 
+								.item-text быструю#[br]окупаемость
+								.line-wrapper
+									.line
+					.clearfix
+					.offer-price-block
+							.text-block
+								.partner-text(id="offerText") Передавая вам программу, я лично и моя команда продолжают о ней заботиться, помогая и подсказывая вам в любой ситуации — от «как подобрать тренера», до «как правильно искать клиентов»
+							.price-block #[span.top-border] #[span.price 750$] #[span.price-text чистой прибыли в месяц #[br] от одной группы #[br] из 10 человек]
+					.clearfix
+					.partner-title-block Партнерство: математика
+					.math-block
+						.scrolling-max
+							img(src="img/partners/max-opacity.png", alt="")
+						.intro-price-block
+							.orange-block.second Единоразовый вступительный взнос:
+							.intro-price 1 200 $
+								.ps * сумма платежа зависит от региона и количества клубной сети
+						.intro-text-block 
+							p В него входит:
+							p - передача авторской методики тренировок на выбор: РЫВОК, РЫВОК-BEAT, РЫВОК-TEENS;
+							p - запуск новой группы лучшим тренером проекта либо автором программы;
+							p - обучение персонала, передача всех знаний и секретов;
+							p - комплект мотивационных и промо- материалов;
+							p - помощь в поиске тренеров;
+						.clearfix
+					.monthly-pay
+						.scrolling-photo
+						.monthly-price-block.mobile-visible
+							.orange-block.third ежемесячные отчисления:
+							.monthly-price #[span 1]00 $
+								.ps за одну группу
+						.monthly-price-text
+							p В него входит:
+							p - использование авторской методики тренировок в своем клубе
+							p - содействие в решении любых бизнес вопросов, касающихся проекта
+							p - контроль работы тренеров и повышение их квалификации
+							p - маркетинговая поддержка и общее регулярное продвижение в социальных сетях
+							p - размещение контактов и расписания вашего клуба на нашем корпоративном сайте
+						.monthly-price-block.mobile-hidden
+							.orange-block.third ежемесячные отчисления:
+							.monthly-price #[span 1]00 $
+								.ps за одну группу
+						.clearfix
+						.forward-text впереееееееед!
+					.form-btn-block
+						.form-btn.second-popup-open 
+							.text Отправить заявку
+							.bg
+						.freedom-max
+							img(src="img/partners/max-liberty.png", alt="")
+					include parts/footer_partners.pug
+
+.popup.popup-window-form
+	form#popup_form(action="")
+		.title-wrapper
+			.screen-title Задать вопрос
+		.close-button
+			.line.left
+			.line.right
+		.form-element.name
+			label(for="popup-name") Имя, фамилия
+			.input-wrapper
+				input(type="text" id="popup-name" required)
+		.form-element.email
+			label(for="popup-email") Контактный emal:
+			.input-wrapper
+				input(type="email" id="popup-email" required)
+		.form-element.phone
+			label(for="popup-phone") Номер телефона:
+			.input-wrapper
+				input(type="text" id="popup-phone" required)
+		.form-element.text
+			label(for="message") .
+			textarea#message(name="", cols="30", rows="10")
+		.form-submit
+			button.submit-btn
+				span Отправить вопрос
+	.popup.popup-thanks
+		.close-button
+			.line.left
+			.line.right
+		.text Ваш вопрос отправлен, спасибо!
+
+.popup.popup-window-form-2
+	form#popup_form-2(action="")
+		.title-wrapper
+			.screen-title Отправить заявку
+		.close-button
+			.line.left
+			.line.right
+		.form-element.name
+			label(for="popup-name") Имя, фамилия
+			.input-wrapper
+				input(type="text" id="popup-name" required)
+		.form-element.email
+			label(for="popup-email") Контактный emal:
+			.input-wrapper
+				input(type="email" id="popup-email" required)
+		.form-element.phone
+			label(for="popup-phone") Номер телефона:
+			.input-wrapper
+				input(type="text" id="popup-phone" required)
+		.form-submit
+			button.submit-btn
+				span Записаться
+.popup.popup-thanks
+	.close-button
+		.line.left
+		.line.right
+	.text Ваш заявка отправлена, спасибо!
+
+.popup-background
+
+.general-menu
+	.partner-logo
+		a(href="http://www.morshinska.ua/" target="_blank")
+			img(src="img/gen-menu-partner.png", alt="")
+	.close-button
+		.line.left
+		.line.right
+	.logo
+		include ../img/svg/menu-ryvok.svg
+	ul.menu
+		li
+			a(href="#" data-text="Тарифы") Тарифы
+		li
+			a(href="#" data-text="Расписания") Расписания
+		li
+			a(href="#" data-text="Партнерство") Партнерство
+		li
+			a(href="#" data-text="Максим Ярошенко") Максим Ярошенко
+		li
+			a(href="#" data-text="Книга \"Фуд-экшн\"") Книга "Фуд-экшн"
+		li
+			a(href="#" data-text="Контакты") Контакты
