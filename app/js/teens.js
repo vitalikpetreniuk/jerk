@@ -74,6 +74,9 @@ $(function(){
 		if(!is_touch_device()) {
 			$('.video-popup-teaser').addClass('active');
 		}
+		if(device.ios()) {
+			$('.video-popup-teaser video')[0].webkitEnterFullscreen();
+		}
 		$('.video-popup-teaser video').get(0).load();
 		$('.video-popup-teaser video').get(0).play();
 	});
@@ -89,8 +92,10 @@ $(function(){
 		$('.video-popup video').get(0).pause();
 	});
 
-	$('.video-popup-teaser video').on('ended',function(){
-		$(this)[0].webkitExitFullscreen();
+	$('.video-popup-teaser video').on('ended webkitendfullscreen',function(){
+		if(device.ios()) {
+			$(this)[0].webkitExitFullscreen();
+		}
       $('.video-popup-teaser').removeClass('active');
       $('.video-popup-teaser video').get(0).pause();
     });

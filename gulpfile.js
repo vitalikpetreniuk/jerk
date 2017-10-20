@@ -33,7 +33,8 @@ gulp.task('scripts', function() {
         'app/libs/scrollmagic/scrollmagic/minified/plugins/animation.gsap.min.js',
         'app/libs/scrollmagic/scrollmagic/minified/plugins/animation.velocity.min.js',
         'app/libs/scrollmagic/scrollmagic/minified/plugins/debug.addIndicators.min.js',
-        'app/libs/gsap/src/minified/TweenMax.min.js'
+        'app/libs/gsap/src/minified/TweenMax.min.js',
+        'app/libs/device.js/lib/device.min.js'
     ])
         .pipe(concat('libs.min.js')) // Собираем их в кучу в новом файле libs.min.js
         .pipe(uglify()) // Сжимаем JS файл

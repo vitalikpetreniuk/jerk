@@ -123,6 +123,8 @@
 			.slide-guy
 				transform: translate(20px,-20px)
 				transition: 15s
+	.owl-item:not(.active)
+		opacity: 0
 	.item
 		clip-path: polygon(0 0, 65% 0, 100% 100%, 0% 100%)
 		overflow: hidden
@@ -220,6 +222,8 @@
 	right: 0
 	overflow: hidden
 	transform: translateX(100%)
+	.owl-item:not(.active)
+		opacity: 0
 	.owl-item.active
 		.item.first
 			.slide-background
@@ -473,7 +477,10 @@
 
 .cool-slider
 	height: 100%
+	.owl-stage,.owl-stage-outer
+		height: 100%
 	.owl-item
+		height: 100%
 		&.active
 			.item
 				.number,.text-block
@@ -485,7 +492,7 @@
 		position: relative
 		width: 100%
 		float: left
-		height: 100vh
+		height: 100%
 		display: flex
 		align-items: center
 		justify-content: center
@@ -834,7 +841,10 @@
 				height: 100vh
 				display: flex
 				align-items: center
-				justify-content: center	
+				justify-content: center
+				&.fourth
+					.photo
+						width: 80%
 				.title
 					font-size: 91px
 				.details-link
@@ -939,7 +949,7 @@
 				.content
 					margin-top: 350px
 				.photo
-					bottom: 120px
+					bottom: 90px
 					top: auto
 			&.third
 				z-index: 2
@@ -1577,7 +1587,161 @@
 		.item .text-block
 			line-height: 50px
 
+
 @media (max-width: 1024px)
+	.teens-left-carousel
+		.item
+			&.first
+				.slide-guy
+					top: 0
+					left: 15%
+					width: 583px
+					height: 848px
+			&.second
+				.footballer
+					bottom: 10%
+					left: 0
+					width: 452px
+					height: 565px
+				.slide-guy
+					transition-delay: 4s
+				.slide-ball
+					bottom: 40%
+					left: 0
+					width: 154px
+					height: 156px
+			&.third
+				.hokkeist
+					position: absolute
+					bottom: 40px
+					left: -12%
+					width: 681px
+					height: 600px
+				.slide-second-guy
+					top: 30%
+					right: 30%
+					width: 190px
+					height: 205px
+				.slide-shaiba
+					bottom: 25%
+					left: 80%
+			&.fourth
+				.slide-guy
+					bottom: 20%
+					left: 5%
+					width: 364px
+					height: 498px
+				.slide-shadow
+					bottom: 15%
+					left: 5%
+					width: 608px
+				    height: 86px
+			&.fifth
+				.slide-background
+					transform: translateX(-130px)
+					height: 100%
+					width: auto
+			&.sixth
+				.slide-guy
+					bottom: 15%
+					left: -100px
+					width: 478px
+					height: 532px
+
+	.teens-right-carousel
+		.item
+			position: relative
+			clip-path: polygon(1% 0, 100% 0, 100% 100%, 25% 100%)
+			overflow: hidden
+			&.first
+				.slide-guy
+					position: absolute
+					right: -100px
+					bottom: 0
+					width: 779px
+					height: 631px
+				.slide-background
+					position: absolute
+					right: -100px
+					bottom: -200px
+					height: calc(100% + 200px)
+					width: auto
+					transition-delay: 4s
+			&.second
+				.diver
+					position: absolute
+					bottom: 40%
+					left: -25%
+					width: 760px
+					height: 498px
+				.slide-guy
+					width: 100%
+					height: 100%
+					transition-delay: 4s
+				.slide-bubbles
+					top: 50%
+					left: 25%
+					position: absolute
+					transition-delay: 4s
+					width: 253px
+					height: 86px
+			&.third
+				.slide-guy
+					position: absolute
+					bottom: 40%
+					left: 30%
+					z-index: 1
+					transition-delay: 4s
+					width: 362px
+					height: 436px
+				.slide-background
+					position: absolute
+					right: 0
+				.slide-front-bg
+					height: 100%
+					position: absolute
+					right: 0
+					z-index: 2
+					width: auto
+			&.fourth
+				.slide-guy
+					position: absolute
+					bottom: 25%
+					left: 40%
+					z-index: 1
+					transition-delay: 4s
+					width: 283px
+					height: 297px
+				.slide-background
+					position: absolute
+					right: -100px
+					height: 100%
+					width: auto
+			&.fifth
+				.slide-guy
+					position: absolute
+					bottom: 20%
+					left: 30%
+					z-index: 1
+					transition-delay: 4s
+					width: 549px
+					height: 447px
+			&.sixth
+				.slide-background
+					position: absolute
+					left: -300px
+					top: 0
+					bottom: 0
+					width: auto
+					transition-delay: 4s
+			&::after
+				content: ''
+				position: absolute
+				top: 0
+				bottom: 0
+				left: 0
+				background: #000
+				width: 2px		
 	.video-popup-teaser
 		width: 100%
 		background: #000
@@ -1608,15 +1772,11 @@
 		.flashlight
 			background: #181818 url('../img/teens/second-bg-tab.jpg') no-repeat
 
-		.center-block
-			position: relative
+		.second-bottom
+			top: 25px
 			z-index: 20
-			width: 75%
 			br
 				display: none
-
-		.second-bottom
-			top: 250px
 
 	.speakers
 		.speaker
@@ -1713,8 +1873,16 @@
 		ul li a
 			font-size: 8px
 
-	.fifth-screen .abonements .item .title
-		font-size: 60px
+	.fifth-screen
+		.abonements:not(.slider)
+			.item
+				width: 25% !important
+				margin-left: 0 !important
+				.photo
+					img
+						width: 100%
+				.title
+					font-size: 55px
 
 	.sixth-screen
 		display: flex
@@ -1754,132 +1922,22 @@
 			object-fit: cover
 			transform: none
 
-@media (max-width: 991px)
-	.teens-left-carousel
-		.item
-			&.first
-				.slide-guy
-					top: 0
-					left: 15%
-			&.second
-				.footballer
-					bottom: 10%
-					left: 0
-				.slide-guy
-					transition-delay: 4s
-				.slide-ball
-					bottom: 40%
-					left: 0
-			&.third
-				.hokkeist
-					position: absolute
-					bottom: 40px
-					left: -12%
-				.slide-second-guy
-					top: 18%
-					right: 30%
-				.slide-shaiba
-					bottom: 25%
-					left: 80%
-			&.fourth
-				.slide-guy
-					bottom: 20%
-					left: 5%
-				.slide-shadow
-					bottom: 15%
-					left: 5%
-			&.fifth
-				.slide-background
-					transform: translateX(-130px)
-					height: 100%
-					width: auto
-			&.sixth
-				.slide-guy
-					bottom: 15%
-					left: -100px
+@media (max-width: 1024px) and (orientation: landscape)
+	.sixth-screen
+		.answers
+			.item
+				&:last-child
+					display: none
+				.q-wrapper,.a-wrapper
+					margin-bottom: 30px
+				.answer
+					.full-answer-link
+						margin-top: 10px
+	.fifth-screen
+		.abonements
+			padding-left: 0
 
-	.teens-right-carousel
-		.item
-			position: relative
-			clip-path: polygon(1% 0, 100% 0, 100% 100%, 25% 100%)
-			overflow: hidden
-			&.first
-				.slide-guy
-					position: absolute
-					right: -100px
-					bottom: 0
-				.slide-background
-					position: absolute
-					right: -100px
-					bottom: -200px
-					height: calc(100% + 200px)
-					width: auto
-					transition-delay: 4s
-			&.second
-				.diver
-					position: absolute
-					bottom: 40%
-					left: -25%
-				.slide-guy
-					width: 100%
-					height: 100%
-					transition-delay: 4s
-				.slide-bubbles
-					top: 50%
-					left: 25%
-					position: absolute
-					transition-delay: 4s
-			&.third
-				.slide-guy
-					position: absolute
-					bottom: 40%
-					left: 30%
-					z-index: 1
-					transition-delay: 4s
-				.slide-background
-					position: absolute
-					right: 0
-				.slide-front-bg
-					height: 100%
-					position: absolute
-					right: 0
-					z-index: 2
-					width: auto
-			&.fourth
-				.slide-guy
-					position: absolute
-					bottom: 25%
-					left: 40%
-					z-index: 1
-					transition-delay: 4s
-				.slide-background
-					position: absolute
-					right: -100px
-					height: 100%
-					width: auto
-			&.fifth
-				.slide-guy
-					position: absolute
-					bottom: 20%
-					left: 30%
-					z-index: 1
-					transition-delay: 4s
-			&.sixth
-				.slide-background
-					position: absolute
-					left: -200px
-					top: 0
-					bottom: 0
-					width: auto
-					transition-delay: 4s
-			&::after
-				content: ''
-				position: absolute
-				top: 0
-				bottom: 0
-				left: 0
-				background: #000
-				width: 2px		
+@media (max-width: 991px)
 	.ask
 	    background: url(../img/svg/ask-mobile-yellow.svg) no-repeat
 	.screen-title
@@ -1943,7 +2001,6 @@
 	.second-screen
 		.text-block
 			font-size: 36px
-
 	.sixth-screen
 		.answers
 			.item
@@ -2378,7 +2435,7 @@
 						color: #68cef8
 				.title
 					margin-bottom: 10px
-					font-size: 18px
+					font-size: 18px !important
 					word-spacing: 5px
 					letter-spacing: 1px
 					text-decoration: underline
@@ -2436,6 +2493,7 @@
 					top: 0
 					left: 0
 					width: 70px
+					background: linear-gradient(to right, rgba(0,0,0,0.73) 0%,rgba(0,0,0,0.15) 80%,rgba(255,255,255,0.01) 99%,rgba(255,255,255,0) 100%)
 					&::before
 						content: ''
 						position: absolute
@@ -2447,20 +2505,34 @@
 						transform: translate(0,-50%) rotate(180deg)
 						background: url(../img/svg/arrow_for_mob.svg)
 						background-size: 100% 100%
+						transition: .2s
 					&::after
 						content: ''
 						position: absolute
-						top: 0
-						bottom: 0
-						left: 0
-						width: 100%
-						opacity: .5
-						background: linear-gradient(to right, rgba(0,0,0,0.73) 0%,rgba(0,0,0,0.15) 80%,rgba(255,255,255,0.01) 99%,rgba(255,255,255,0) 100%)
+						top: 50%
+						left: 20px
+						z-index: 100
+						width: 15px
+						height: 28px
+						transform: translate(0,-50%) rotate(180deg)
+						background: url(../img/svg/arrow_for_mob-orange.svg)
+						background-size: 100% 100%
+						opacity: 0
+						transition: .2s
+					&:hover
+						&::after
+							opacity: 1
+							transition: .2s
+						&::before
+							opacity: 0
+							transition: .2s
+						
 				.owl-next
 					height: 100vh
 					top: 0
 					right: 0
 					width: 70px
+					background: linear-gradient(to left, rgba(0,0,0,0.73) 0%,rgba(0,0,0,0.15) 80%,rgba(255,255,255,0.01) 99%,rgba(255,255,255,0) 100%)
 					&::before
 						content: ''
 						position: absolute
@@ -2472,15 +2544,27 @@
 						transform: translate(0,-50%)
 						background: url(../img/svg/arrow_for_mob.svg)
 						background-size: 100% 100%
+						transition: .2s
 					&::after
 						content: ''
 						position: absolute
-						top: 0
-						bottom: 0
-						left: 0
-						width: 100%
-						opacity: .5
-						background: linear-gradient(to left, rgba(0,0,0,0.73) 0%,rgba(0,0,0,0.15) 80%,rgba(255,255,255,0.01) 99%,rgba(255,255,255,0) 100%)
+						top: 50%
+						right: 20px
+						z-index: 100
+						width: 17px
+						height: 31px
+						transform: translate(0,-50%)
+						background: url(../img/svg/arrow_for_mob-orange.svg)
+						background-size: 100% 100%
+						opacity: 0
+						transition: .2s
+					&:hover
+						&::after
+							opacity: 1
+							transition: .2s
+						&::before
+							opacity: 0
+							transition: .2s
 				.item
 					width: 100%
 					height: 100%
@@ -2508,6 +2592,7 @@
 @media (max-width: 767px) and (orientation:portrait)
 	.first-screen
 		height: 67vh
+		max-height: 67vh
 		.bottom-button
 			bottom: 0
 	.second-screen
@@ -2532,6 +2617,10 @@
 	.seventh-screen
 		height: 430px
 		.board.slider
+			.owl-stage,.owl-stage-outer
+				height: 100%
+			.owl-item
+				height: 100%
 			.item
 				height: 430px
 				.photo
@@ -2553,7 +2642,7 @@
 			display: block
 			.item
 				margin: 0
-				width: 100%
+				width: 100% !important
 				height: auto
 				.title
 					color: #68cef8

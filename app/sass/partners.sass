@@ -332,6 +332,7 @@ footer
 .offer-items
 	position: relative
 	z-index: 1
+	overflow: hidden
 	&.mobile-visible
 		display: none
 	.item	
@@ -672,6 +673,9 @@ footer
 @import "all_responsive";
 
 @media (max-width: 1024px)
+	
+	.offer-items .item:nth-child(even) .line
+		left: -10px
 
 	.bg-photos-logo
 		height: auto
@@ -694,7 +698,8 @@ footer
 			right: -20px
 		img
 			width: 120%
-			left: -30px
+			left: -35px
+			bottom: 20px
 
 	.orange-block
 		font-size: 26px
@@ -779,8 +784,6 @@ footer
 		.monthly-price
 			font-size: 116px
 			margin-left: 40px
-		&.mobile-hidden
-			display: none
 
 	.monthly-price-text
 		width: 350px
@@ -805,8 +808,8 @@ footer
 		right: -600px
 
 	.freedom-max
-		width: 400px
-		bottom: 240px
+		width: 500px
+		bottom: 150px
 		img
 			width: 100%
 
@@ -1009,11 +1012,12 @@ footer
 		top: 50px
 	.intro-price-block 
 		.orange-block
-			left: auto
+			left: 180px
+			right: auto
 			position: absolute
 			top: 50px
 		.intro-price
-			margin-top: 30px
+			margin-top: 80px
 
 	.form-btn-block
 		text-align: center
@@ -1024,14 +1028,17 @@ footer
 		.orange-block
 			position: absolute
 			bottom: auto
-			right: 250px
+			right: 200px
 			top: 0
+		.monthly-price
+			margin-top: 50px
 	.freedom-max
 		bottom: 200px
 
-@media (max-width: 374px) and (orientation: landscape)
+@media (max-width: 568px) and (orientation: landscape)
+	.intro-price-block 
+		.orange-block
+			left: 130px
 	.monthly-price-block
 		.orange-block
-			right: 50%
-			position: absolute
-			top: 80px
+			right: 150px

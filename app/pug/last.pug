@@ -13,14 +13,13 @@ html(lang="en")
 		script(src="js/mobile-chrome-vh-fix.js")
 		script(src="js/intro.js")
 	body
-		.menu-icon
-			include ../img/svg/site-menu-znachok.svg
-			span.text МЕНЮ
-			span.left.line
-			span.right.line
-				
 		.main-wrapper
-			
+			.menu-icon
+				include ../img/svg/site-menu-znachok.svg
+				span.text МЕНЮ
+				span.left.line
+				span.right.line
+				
 			.first-screen.screen
 				//- .ask #[.text Задать вопрос]
 				//- 	include ../img/svg/bw-plashka-vopros.svg
@@ -52,15 +51,6 @@ html(lang="en")
 									include ../img/svg/logo-teens-isxodnaya.svg
 								.logo-bg
 							.tooltip Ритмично-музыкальное безумие, которое заставит тебя покачиваться в такт #[a(href="teens.html") Перейти к программе]
-						
-					.logo-wrapper.blog
-						.item-wrapper
-							.item.blog
-								a(href="#")
-									include ../img/svg/menu-ryvok.svg
-									include ../img/svg/logo-blog-final.svg
-								.logo-bg
-							.tooltip Ритмично-музыкальное безумие, которое заставит тебя покачиваться в такт #[a(href="blog.html") Перейти к программе]
 				.bottom-button Свежие новости
 	
 			.second-screen.screen#board

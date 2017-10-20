@@ -557,6 +557,9 @@
 				display: flex
 				align-items: center
 				justify-content: center	
+				&.fourth
+					.photo
+						width: 80%
 				.title
 					font-size: 91px
 				.details-link
@@ -661,7 +664,7 @@
 				.content
 					margin-top: 350px
 				.photo
-					bottom: 120px
+					bottom: 90px
 					top: auto
 			&.third
 				z-index: 2
@@ -1075,32 +1078,6 @@
 		.item .text-block
 			line-height: 50px
 
-@media (width: 1024px) and (orientation: landscape)
-	.cool-slider
-			.item,.item.revert
-				.photo
-					display: none
-				.number
-					width: 100%
-					text-align: center
-					img
-						right: auto
-						left: 50%
-						transform: translate(-50%,-50%)
-
-@media (max-width: 1024px) and (orientation: portrait)
-	.cool-slider
-			.item,.item.revert
-				.photo
-					display: none
-				.number
-					width: 100%
-					text-align: center
-					img
-						right: auto
-						left: 50%
-						transform: translate(-50%,-50%)
-
 @media (max-width: 1024px) 
 	
 	.seventh-screen
@@ -1199,10 +1176,18 @@
 			top: 15%
 
 	.title-wrapper .screen-title
-		margin-top: 100px
+		margin-top: 45px
 
-	.fifth-screen .abonements .item .title
-		font-size: 60px
+	.fifth-screen
+		.abonements:not(.slider)
+			.item
+				width: 25% !important
+				margin-left: 0 !important
+				.photo
+					img
+						width: 100%
+				.title
+					font-size: 55px
 
 	.sixth-screen
 		display: flex
@@ -1244,6 +1229,42 @@
 			right: 70px
 		.owl-prev
 			left: 70px
+
+@media (width: 1024px) and (orientation: landscape)
+	.cool-slider
+			.item,.item.revert
+				.photo
+					display: none
+				.number
+					width: 100%
+					text-align: center
+					img
+						right: auto
+						left: 50%
+						transform: translate(-50%,-50%)
+	.sixth-screen
+		.answers
+			.item
+				&:last-child
+					display: none
+				.q-wrapper,.a-wrapper
+					margin-bottom: 30px
+				.answer
+					.full-answer-link
+						margin-top: 10px
+
+@media (max-width: 1024px) and (orientation: portrait)
+	.cool-slider
+			.item,.item.revert
+				.photo
+					display: none
+				.number
+					width: 100%
+					text-align: center
+					img
+						right: auto
+						left: 50%
+						transform: translate(-50%,-50%)
 		
 @media (max-width: 991px)
 
@@ -1474,8 +1495,6 @@
 				max-width: 90%
 				.text
 					line-height: 25px
-					max-height: 125px
-					overflow: hidden
 			.number, &.revert .number
 				padding-right: 0
 				font-size: 20em
@@ -1640,6 +1659,7 @@
 					top: 0
 					left: 0
 					width: 70px
+					background: linear-gradient(to right, rgba(0,0,0,0.73) 0%,rgba(0,0,0,0.15) 80%,rgba(255,255,255,0.01) 99%,rgba(255,255,255,0) 100%)
 					&::before
 						content: ''
 						position: absolute
@@ -1651,20 +1671,34 @@
 						transform: translate(0,-50%) rotate(180deg)
 						background: url(../img/svg/arrow_for_mob.svg)
 						background-size: 100% 100%
+						transition: .2s
 					&::after
 						content: ''
 						position: absolute
-						top: 0
-						bottom: 0
-						left: 0
-						width: 100%
-						opacity: .5
-						background: linear-gradient(to right, rgba(0,0,0,0.73) 0%,rgba(0,0,0,0.15) 80%,rgba(255,255,255,0.01) 99%,rgba(255,255,255,0) 100%)
+						top: 50%
+						left: 20px
+						z-index: 100
+						width: 15px
+						height: 28px
+						transform: translate(0,-50%) rotate(180deg)
+						background: url(../img/svg/arrow_for_mob-orange.svg)
+						background-size: 100% 100%
+						opacity: 0
+						transition: .2s
+					&:hover
+						&::after
+							opacity: 1
+							transition: .2s
+						&::before
+							opacity: 0
+							transition: .2s
+						
 				.owl-next
 					height: 100vh
 					top: 0
 					right: 0
 					width: 70px
+					background: linear-gradient(to left, rgba(0,0,0,0.73) 0%,rgba(0,0,0,0.15) 80%,rgba(255,255,255,0.01) 99%,rgba(255,255,255,0) 100%)
 					&::before
 						content: ''
 						position: absolute
@@ -1676,15 +1710,28 @@
 						transform: translate(0,-50%)
 						background: url(../img/svg/arrow_for_mob.svg)
 						background-size: 100% 100%
+						transition: .2s
 					&::after
 						content: ''
 						position: absolute
-						top: 0
-						bottom: 0
-						left: 0
-						width: 100%
-						opacity: .5
-						background: linear-gradient(to left, rgba(0,0,0,0.73) 0%,rgba(0,0,0,0.15) 80%,rgba(255,255,255,0.01) 99%,rgba(255,255,255,0) 100%)
+						top: 50%
+						right: 20px
+						z-index: 100
+						width: 17px
+						height: 31px
+						transform: translate(0,-50%)
+						background: url(../img/svg/arrow_for_mob-orange.svg)
+						background-size: 100% 100%
+						opacity: 0
+						transition: .2s
+					&:hover
+						&::after
+							opacity: 1
+							transition: .2s
+						&::before
+							opacity: 0
+							transition: .2s
+						
 				.item
 					width: 100%
 					height: 100%
@@ -1815,10 +1862,11 @@
 			display: block
 			.item
 				margin: 0
-				width: 100%
+				width: 100% !important
 				height: auto
 				.title
 					color: #68cef8
+					font-size: 18px
 				.photo,.details-link
 					display: none
 				.content	
@@ -1856,15 +1904,16 @@
 		margin-top: 30px
 	.cool-slider
 		.owl-carousel.owl-loaded
-		.item, .item.revert
-			margin-top: 40px
-			.number
-				font-size: 13em
-			.text-block
-				max-width: 90%
-				.logo
-					img
-						width: 82px
+		.owl-item
+			.item, .item.revert
+				margin-top: 40px
+				.number
+					font-size: 13em
+				.text-block
+					max-width: 90%
+					.logo
+						img
+							width: 82px
 		.owl-dots
 			bottom: 15%
 

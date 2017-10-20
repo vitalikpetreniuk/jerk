@@ -19,8 +19,6 @@
 				margin-left: -150px
 		
 @media (max-width: 1024px)
-	.general-menu
-		display: none
 	.main-wrapper
 		.ask.inner
 			left: 0
@@ -150,18 +148,16 @@
 
 
 @media (max-width: 1024px)
+	.close-mobile-button .line
+		height: 40px
+		width: 3px
+		left: calc(50% + 5px)
 	.general-menu
 		transform: none
 		background: rgba(60,60,60,1)
-		transition: none
+		transition: .4s
 		opacity: 0
-		.menu
-			li
-				margin-bottom: 30px
-				a
-					font-size: 26px
-					line-height: 1
-					letter-spacing: 2px
+		visibility: hidden
 		.close-button
 			display: none
 		.close-mobile-button
@@ -174,6 +170,10 @@
 			margin-bottom: 60px 
 			svg
 				width: 80px
+		&.visible
+			opacity: 1
+			transition: .4s
+			visibility: visible
 	.main-wrapper,.main-wrapper.inner
 		width: 100%
 		margin-left: 0
@@ -182,7 +182,7 @@
 		.screen-title
 			margin-top: 80px
 		padding: 0 85px
-		height: 840px
+		height: 780px
 		width: 540px
 		#popup_form
 			.form-element
@@ -203,7 +203,7 @@
 		.screen-title
 			margin-top: 80px
 		padding: 0 85px
-		height: 740px
+		height: 780px
 		width: 540px
 		#popup_form-2
 			.form-element
@@ -250,7 +250,7 @@
 			font-size: 8px
 
 	.title-wrapper .screen-title
-		margin-top: 60px
+		margin-top: 45px
 
 	.top-tab-menu
 		padding: 0
@@ -323,9 +323,6 @@
 		.menu
 			li
 				margin-bottom: 20px
-				a
-					font-size: 16px
-
 	.popup-thanks
 		.text
 			font-size: 20px
@@ -394,6 +391,14 @@
 			background: url('../img/svg/ask-mobile-transparent.svg') no-repeat
 
 @media (max-width: 767px)
+	.general-menu
+		.menu
+			li
+				margin-bottom: 30px
+				a
+					font-size: 16px
+					line-height: 1
+					letter-spacing: 2px
 	.form-element
 		select
 			width: 100%
@@ -429,7 +434,7 @@
 		margin-top: 60px
 
 	.mobile
-		display: block
+		display: block !important
 
 	.desktop
 		display: none

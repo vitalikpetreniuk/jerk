@@ -13,6 +13,7 @@ html(lang="en")
 		script(src="js/libs.min.js")
 		script(src="js/mobile-chrome-vh-fix.js")
 		script(src="js/main.js")
+		script(src="js/blog.js")
 
 	body
 		.top-tab-menu
@@ -88,6 +89,11 @@ html(lang="en")
 						.center-btn.filter-btn(data-filter=".article") #[span Статьи] #[span.background]
 						.center-btn.filter-btn(data-filter=".interview") #[span Интервью] #[span.background]
 						.right-btn.filter-btn(data-filter=".media") #[span Медиатека] #[span.background]
+					.filter-arrows
+						.left-arrow
+							include ../img/svg/side-arrow.svg
+						.right-arrow
+							include ../img/svg/side-arrow.svg
 				.blog-list
 					.blog-list-item.event.wow.fadeIn
 						.blog-list-image

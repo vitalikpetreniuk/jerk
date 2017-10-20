@@ -731,7 +731,10 @@
 				height: 100vh
 				display: flex
 				align-items: center
-				justify-content: center	
+				justify-content: center
+				&.fourth
+					.photo
+						width: 80%
 				.title
 					font-size: 91px
 				.details-link
@@ -836,7 +839,7 @@
 				.content
 					margin-top: 350px
 				.photo
-					bottom: 120px
+					bottom: 90px
 					top: auto
 			&.third
 				z-index: 2
@@ -1019,6 +1022,8 @@
 	.board
 		height: 100vh
 		width: 100%
+		&.slider
+			display: none
 		.item
 			height: 50%
 			width: 25%
@@ -1301,7 +1306,9 @@
 				display: none
 
 		.second-bottom
-			top: 250px
+			top: auto
+			bottom: 100px
+			position: absolute
 
 	.speakers
 		.speaker
@@ -1391,8 +1398,16 @@
 		ul li a
 			font-size: 8px
 
-	.fifth-screen .abonements .item .title
-		font-size: 60px
+	.fifth-screen
+		.abonements:not(.slider)
+			.item
+				width: 25% !important
+				margin-left: 0 !important
+				.photo
+					img
+						width: 100%
+				.title
+					font-size: 55px
 
 	.sixth-screen
 		display: flex
@@ -1431,6 +1446,21 @@
 		video
 			object-fit: cover
 			transform: none
+
+@media (max-width: 1024px) and (orientation: landscape)
+	.sixth-screen
+		.answers
+			.item
+				&:last-child
+					display: none
+				.q-wrapper,.a-wrapper
+					margin-bottom: 30px
+				.answer
+					.full-answer-link
+						margin-top: 10px
+	.fifth-screen
+		.abonements
+			padding-left: 0
 
 @media (max-width: 991px)
 	.cool-slider
@@ -1549,8 +1579,15 @@
 				font-size: 8px
 				letter-spacing: 1px
 				margin-bottom: 5px
-				padding: 5px 7px
-				padding-bottom: 3px
+				padding: 0
+				height: 16px
+				position: relative
+				span
+					position: absolute
+					width: 100%
+					left: 0
+					top: calc(50% - .5px)
+					transform: translateY(-50%)
 			.bottom-text
 				font-size: 30px
 				letter-spacing: -3px
@@ -1798,6 +1835,7 @@
 					top: 0
 					left: 0
 					width: 70px
+					background: linear-gradient(to right, rgba(0,0,0,0.73) 0%,rgba(0,0,0,0.15) 80%,rgba(255,255,255,0.01) 99%,rgba(255,255,255,0) 100%)
 					&::before
 						content: ''
 						position: absolute
@@ -1809,20 +1847,34 @@
 						transform: translate(0,-50%) rotate(180deg)
 						background: url(../img/svg/arrow_for_mob.svg)
 						background-size: 100% 100%
+						transition: .2s
 					&::after
 						content: ''
 						position: absolute
-						top: 0
-						bottom: 0
-						left: 0
-						width: 100%
-						opacity: .5
-						background: linear-gradient(to right, rgba(0,0,0,0.73) 0%,rgba(0,0,0,0.15) 80%,rgba(255,255,255,0.01) 99%,rgba(255,255,255,0) 100%)
+						top: 50%
+						left: 20px
+						z-index: 100
+						width: 15px
+						height: 28px
+						transform: translate(0,-50%) rotate(180deg)
+						background: url(../img/svg/arrow_for_mob-orange.svg)
+						background-size: 100% 100%
+						opacity: 0
+						transition: .2s
+					&:hover
+						&::after
+							opacity: 1
+							transition: .2s
+						&::before
+							opacity: 0
+							transition: .2s
+						
 				.owl-next
 					height: 100vh
 					top: 0
 					right: 0
 					width: 70px
+					background: linear-gradient(to left, rgba(0,0,0,0.73) 0%,rgba(0,0,0,0.15) 80%,rgba(255,255,255,0.01) 99%,rgba(255,255,255,0) 100%)
 					&::before
 						content: ''
 						position: absolute
@@ -1834,15 +1886,28 @@
 						transform: translate(0,-50%)
 						background: url(../img/svg/arrow_for_mob.svg)
 						background-size: 100% 100%
+						transition: .2s
 					&::after
 						content: ''
 						position: absolute
-						top: 0
-						bottom: 0
-						left: 0
-						width: 100%
-						opacity: .5
-						background: linear-gradient(to left, rgba(0,0,0,0.73) 0%,rgba(0,0,0,0.15) 80%,rgba(255,255,255,0.01) 99%,rgba(255,255,255,0) 100%)
+						top: 50%
+						right: 20px
+						z-index: 100
+						width: 17px
+						height: 31px
+						transform: translate(0,-50%)
+						background: url(../img/svg/arrow_for_mob-orange.svg)
+						background-size: 100% 100%
+						opacity: 0
+						transition: .2s
+					&:hover
+						&::after
+							opacity: 1
+							transition: .2s
+						&::before
+							opacity: 0
+							transition: .2s
+						
 				.item
 					width: 100%
 					height: 100%
@@ -1897,10 +1962,11 @@
 			display: block
 			.item
 				margin: 0
-				width: 100%
+				width: 100% !important
 				height: auto
 				.title
 					color: #68cef8
+					font-size: 18px
 				.photo,.details-link
 					display: none
 				.content	
@@ -2112,12 +2178,12 @@
 	.first-screen
 		.touch-photo
 			img
-				left: 0
+				left: 50%
 				top: 0
 				bottom: 0
-				width: 100%
-				height: auto
-				transform: none
+				width: auto
+				height: 100%
+				transform: translateX(-50%)
 
 @media (max-width: 600px) and (orientation:landscape)
 	.sixth-screen .answers .item .answer, .sixth-screen .answers .item .question

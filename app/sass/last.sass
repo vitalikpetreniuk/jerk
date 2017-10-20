@@ -53,7 +53,7 @@
 	height: 100%
 	.logo-wrapper
 		float: left
-		width: 25%
+		width: 33.3%
 		text-align: center
 		height: 100%
 		display: flex
@@ -145,6 +145,9 @@
 				left: 0
 				top: 0
 				bottom: 0
+		a
+			display: block
+			width: 100%
 	.ryvok
 		.tooltip
 			a
@@ -700,6 +703,24 @@
 @import "all_responsive";
 
 @media (max-width: 1024px)
+	.intro-logos
+		z-index: 10
+		.tooltip
+			background: #242321
+			width: 200%
+		.item
+			&.ryvok
+				& + .tooltip
+					left: 110%
+					&::before,&::after
+						left: 80px
+			&.teens
+				& + .tooltip
+					right: -90%
+					left: auto
+					&::before,&::after
+						left: auto
+						right: 50px
 	.screen
 		height: 50vh
 		min-height: 0
@@ -717,7 +738,7 @@
 				height: 50%
 				.photo
 					img
-						width: auto
+						width: 100%
 						position: absolute
 						top: 50%
 						left: 50%
@@ -764,6 +785,24 @@
 					width: 100%
 
 @media (max-width: 767px)
+	.intro-logos
+		z-index: 10
+		.tooltip
+			background: #242321
+			width: 100%
+		.item
+			&.ryvok
+				& + .tooltip
+					left: 55%
+					&::before,&::after
+						left: 50%
+			&.blog
+				& + .tooltip
+					right: auto
+					left: 50%
+					&::before,&::after
+						left: 50%
+						right: auto
 	.close-button
 		display: block
 
@@ -891,6 +930,7 @@
 						height: 430px
 						img
 							height: auto
+							width: auto
 					.text
 						padding: 20px 50px
 						height: auto
@@ -955,7 +995,7 @@
 			svg
 				width: 85%
 		.logo-wrapper
-			width: 25%
+			width: 33.3%
 			float: left
 			height: 100%
 		.tooltip
@@ -987,6 +1027,25 @@
 						img
 							transform: translateX(-50%) scale(1.1)
 
+@media(max-width: 670px) and (orientation: landscape)
+	.intro-logos
+		z-index: 10
+		.tooltip
+			background: #242321
+			width: 200%
+		.item
+			&.ryvok
+				& + .tooltip
+					left: 110%
+					&::before,&::after
+						left: 50px
+			&.teens
+				& + .tooltip
+					right: -90%
+					left: auto
+					&::before,&::after
+						left: auto
+						right: 30px
 
 @media (max-width: 320px)
 	.intro-logos

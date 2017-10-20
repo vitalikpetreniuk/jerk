@@ -9,7 +9,8 @@ $(function(){
 
 
 	var isBlockAnimated = false;
-	var discountLeft = $('.discount-block').offset().left;
+	if($('.discount-block').length) {
+		var discountLeft = $('.discount-block').offset().left;
 
 	$('.discount-block').stick_in_parent()
 		.on("sticky_kit:bottom", function(e) {
@@ -26,6 +27,7 @@ $(function(){
 	  	.on("sticky_kit:unstick", function(e) {
 	  		$(this).css('left','');
 	  	});
+	}
 
 
 	$(window).on('scroll',function() {

@@ -229,6 +229,7 @@ $(function(){
 	new ScrollMagic.Scene({
 			duration: 200,
 			triggerElement: '.monthly-pay',
+			triggerHook: .9
 		})
 		.setTween(TweenMax.from('.orange-block.third',1,{x: '100%',ease:Power0.easeNone}))
 		.addTo(controller); // assign the scene to the controller

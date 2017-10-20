@@ -59,23 +59,31 @@ $(function(){
 	$('.video-popup video').get(0).pause();
 
 	$('.play-btn').on('click',function(){
-		if(!is_touch_device()) {
+		if(!is_touch_device() || !device.ios()) {
 			$('.video-popup').addClass('active');
+		}
+		if(device.ios()) {
+			$('.video-screen video')[0].webkitEnterFullscreen();
 		}
 		$('.video-popup video').get(0).load();
 		$('.video-popup video').get(0).play();
 	});
 
 	$('.watch-video-btn').on('click',function(){
-		if(!is_touch_device()) {
+		if(!is_touch_device() || !device.ios()) {
 			$('.video-popup-teaser').addClass('active');
+		}
+		if(device.ios()) {
+			$('.video-popup-teaser video')[0].webkitEnterFullscreen();
 		}
 		$('.video-popup-teaser video').get(0).load();
 		$('.video-popup-teaser video').get(0).play();
 	});
 
 	$('.video-popup video').on('ended webkitendfullscreen',function(){
-		$(this)[0].webkitExitFullscreen();
+		if(device.ios()) {
+			$(this)[0].webkitExitFullscreen();
+		}
       $('.video-popup').removeClass('active');
       $('.video-popup video').attr('src','video/rolik'+(++videoNumber)+'.mp4');
 		if(videoNumber == 6) {
@@ -113,7 +121,9 @@ $(function(){
 	});
 
 	$('.video-popup-teaser video').on('ended webkitendfullscreen',function(){
-		$(this)[0].webkitExitFullscreen();
+		if(device.ios()) {
+			$(this)[0].webkitExitFullscreen();
+		}
       $('.video-popup-teaser').removeClass('active');
       $('.video-popup-teaser video').get(0).pause();
     });
