@@ -3220,6 +3220,12 @@ footer {
   .seventh-screen .board .promo-block .text-block {
     padding: 0 60px !important; } }
 
+@media (max-width: 1024px) and (orientation: portrait) {
+  .popup-window-form, .popup-window-form-2 {
+    background: url("../img/form-mob-fon.jpg") no-repeat center center;
+    -webkit-background-size: auto 100%;
+            background-size: auto 100%; } }
+
 @media (max-width: 767px) and (orientation: landscape) {
   .general-menu .logo {
     margin-bottom: 15px; }
@@ -3228,8 +3234,7 @@ footer {
   .title-wrapper .screen-title {
     margin-top: 30px; }
   .popup-window-form {
-    width: 90%;
-    z-index: 300;
+    width: 100%;
     margin-top: 0; }
     .popup-window-form #popup_form .form-element {
       width: -webkit-calc(50% - 20px) !important;
@@ -3239,8 +3244,7 @@ footer {
     .popup-window-form #popup_form label {
       margin-bottom: 2px; }
   .popup-window-form-2 {
-    width: 90%;
-    z-index: 300;
+    width: 100%;
     margin-top: 0; }
     .popup-window-form-2 #popup_form-2 .form-element {
       width: -webkit-calc(50% - 20px) !important;

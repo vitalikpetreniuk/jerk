@@ -2568,7 +2568,8 @@ footer {
     transition: .4s;
     -webkit-transform: translate(-50%, 0);
         -ms-transform: translate(-50%, 0);
-            transform: translate(-50%, 0); }
+            transform: translate(-50%, 0);
+    pointer-events: auto; }
   .intro-logos .tooltip {
     color: #fff;
     font-size: 16px;
@@ -2590,7 +2591,8 @@ footer {
         -ms-transform: translate(-50%, -100px);
             transform: translate(-50%, -100px);
     border: 1px solid #fff;
-    border-radius: 10px; }
+    border-radius: 10px;
+    pointer-events: none; }
     .intro-logos .tooltip::before {
       content: '';
       position: absolute;
@@ -3147,7 +3149,7 @@ footer {
 
 .menu-icon {
   position: absolute;
-  z-index: 2;
+  z-index: 20;
   top: 45px;
   left: 55px; }
   .menu-icon svg .st0 {
@@ -3794,6 +3796,12 @@ footer {
   .seventh-screen .board .promo-block .text-block {
     padding: 0 60px !important; } }
 
+@media (max-width: 1024px) and (orientation: portrait) {
+  .popup-window-form, .popup-window-form-2 {
+    background: url("../img/form-mob-fon.jpg") no-repeat center center;
+    -webkit-background-size: auto 100%;
+            background-size: auto 100%; } }
+
 @media (max-width: 767px) and (orientation: landscape) {
   .general-menu .logo {
     margin-bottom: 15px; }
@@ -3802,8 +3810,7 @@ footer {
   .title-wrapper .screen-title {
     margin-top: 30px; }
   .popup-window-form {
-    width: 90%;
-    z-index: 300;
+    width: 100%;
     margin-top: 0; }
     .popup-window-form #popup_form .form-element {
       width: -webkit-calc(50% - 20px) !important;
@@ -3813,8 +3820,7 @@ footer {
     .popup-window-form #popup_form label {
       margin-bottom: 2px; }
   .popup-window-form-2 {
-    width: 90%;
-    z-index: 300;
+    width: 100%;
     margin-top: 0; }
     .popup-window-form-2 #popup_form-2 .form-element {
       width: -webkit-calc(50% - 20px) !important;
@@ -3836,13 +3842,20 @@ footer {
     z-index: 300; } }
 
 @media (max-width: 1024px) {
+  .general-menu .close-mobile-button {
+    left: 13px;
+    display: none; }
+  .general-menu .close-button {
+    display: block;
+    top: 28px;
+    left: 36px; }
   .intro-logos {
     z-index: 10; }
     .intro-logos .tooltip {
       background: #242321;
       width: 200%; }
     .intro-logos .item.ryvok + .tooltip {
-      left: 110%; }
+      left: 125%; }
       .intro-logos .item.ryvok + .tooltip::before, .intro-logos .item.ryvok + .tooltip::after {
         left: 80px; }
     .intro-logos .item.teens + .tooltip {
@@ -3911,6 +3924,11 @@ footer {
         width: 100%; } }
 
 @media (max-width: 767px) {
+  .general-menu .close-mobile-button {
+    left: 13px;
+    display: block; }
+  .general-menu .close-button {
+    display: none; }
   .intro-logos {
     z-index: 10; }
     .intro-logos .tooltip {
@@ -3926,8 +3944,6 @@ footer {
       .intro-logos .item.blog + .tooltip::before, .intro-logos .item.blog + .tooltip::after {
         left: 50%;
         right: auto; }
-  .close-button {
-    display: block; }
   .intro-menu {
     left: 0;
     z-index: 10000; }
@@ -4173,7 +4189,7 @@ footer {
       background: #242321;
       width: 200%; }
     .intro-logos .item.ryvok + .tooltip {
-      left: 110%; }
+      left: 125%; }
       .intro-logos .item.ryvok + .tooltip::before, .intro-logos .item.ryvok + .tooltip::after {
         left: 50px; }
     .intro-logos .item.teens + .tooltip {

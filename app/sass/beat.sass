@@ -366,7 +366,12 @@
 
 .cool-slider
 	height: 100%
+	.owl-stage,.owl-stage-outer
+		height: 100%
 	.owl-item
+		height: 100%
+		.item
+			height: 100%
 		&.active
 			.item
 				.number,.text-block
@@ -378,7 +383,6 @@
 		position: relative
 		width: 100%
 		float: left
-		height: 100vh
 		display: flex
 		align-items: center
 		justify-content: center
@@ -1443,8 +1447,8 @@
 		left: 70px
 
 	.video-popup
+		background: #000
 		video
-			object-fit: cover
 			transform: none
 
 @media (max-width: 1024px) and (orientation: landscape)

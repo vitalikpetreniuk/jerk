@@ -102,6 +102,7 @@
 		opacity: 1
 		transition: .4s
 		transform: translate(-50%,0)
+		pointer-events: auto
 	.tooltip
 		color: #fff
 		font-size: 16px
@@ -119,6 +120,7 @@
 		transform: translate(-50%,-100px)
 		border: 1px solid #fff
 		border-radius: 10px
+		pointer-events: none
 		&::before
 			content: ''
 			position: absolute
@@ -594,7 +596,7 @@
 
 .menu-icon
 	position: absolute
-	z-index: 2
+	z-index: 20
 	top: 45px
 	left: 55px
 	svg
@@ -703,6 +705,14 @@
 @import "all_responsive";
 
 @media (max-width: 1024px)
+	.general-menu
+		.close-mobile-button
+			left: 13px
+			display: none
+		.close-button
+			display: block
+			top: 28px
+			left: 36px
 	.intro-logos
 		z-index: 10
 		.tooltip
@@ -711,7 +721,7 @@
 		.item
 			&.ryvok
 				& + .tooltip
-					left: 110%
+					left: 125%
 					&::before,&::after
 						left: 80px
 			&.teens
@@ -785,6 +795,12 @@
 					width: 100%
 
 @media (max-width: 767px)
+	.general-menu
+		.close-mobile-button
+			left: 13px
+			display: block
+		.close-button
+			display: none
 	.intro-logos
 		z-index: 10
 		.tooltip
@@ -803,8 +819,6 @@
 					&::before,&::after
 						left: 50%
 						right: auto
-	.close-button
-		display: block
 
 	.intro-menu
 		left: 0
@@ -1036,7 +1050,7 @@
 		.item
 			&.ryvok
 				& + .tooltip
-					left: 110%
+					left: 125%
 					&::before,&::after
 						left: 50px
 			&.teens

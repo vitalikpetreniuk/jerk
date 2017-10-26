@@ -71,7 +71,7 @@ $(function(){
 	});
 
 	$('.watch-video-btn').on('click',function(){
-		if(!is_touch_device()) {
+		if(!is_touch_device() || !device.ios()) {
 			$('.video-popup-teaser').addClass('active');
 		}
 		if(device.ios()) {
@@ -89,7 +89,7 @@ $(function(){
 
     $('.video-popup-teaser video').on('click',function(){
 		$('.video-popup-teaser').removeClass('active');
-		$('.video-popup video').get(0).pause();
+		$('.video-popup-teaser video').get(0).pause();
 	});
 
 	$('.video-popup-teaser video').on('ended webkitendfullscreen',function(){

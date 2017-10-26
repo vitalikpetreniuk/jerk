@@ -2876,17 +2876,22 @@ footer {
 
 .cool-slider {
   height: 100%; }
-  .cool-slider .owl-item.active .item .number, .cool-slider .owl-item.active .item .text-block {
-    opacity: 1; }
-  .cool-slider .owl-item.active .item .text-block {
-    -webkit-transition: .8s .2s;
-    -o-transition: .8s .2s;
-    transition: .8s .2s; }
+  .cool-slider .owl-stage, .cool-slider .owl-stage-outer {
+    height: 100%; }
+  .cool-slider .owl-item {
+    height: 100%; }
+    .cool-slider .owl-item .item {
+      height: 100%; }
+    .cool-slider .owl-item.active .item .number, .cool-slider .owl-item.active .item .text-block {
+      opacity: 1; }
+    .cool-slider .owl-item.active .item .text-block {
+      -webkit-transition: .8s .2s;
+      -o-transition: .8s .2s;
+      transition: .8s .2s; }
   .cool-slider .item {
     position: relative;
     width: 100%;
     float: left;
-    height: 100vh;
     display: -webkit-box;
     display: -webkit-flex;
     display: -ms-flexbox;
@@ -4380,6 +4385,12 @@ footer {
   .seventh-screen .board .promo-block .text-block {
     padding: 0 60px !important; } }
 
+@media (max-width: 1024px) and (orientation: portrait) {
+  .popup-window-form, .popup-window-form-2 {
+    background: url("../img/form-mob-fon.jpg") no-repeat center center;
+    -webkit-background-size: auto 100%;
+            background-size: auto 100%; } }
+
 @media (max-width: 767px) and (orientation: landscape) {
   .general-menu .logo {
     margin-bottom: 15px; }
@@ -4388,8 +4399,7 @@ footer {
   .title-wrapper .screen-title {
     margin-top: 30px; }
   .popup-window-form {
-    width: 90%;
-    z-index: 300;
+    width: 100%;
     margin-top: 0; }
     .popup-window-form #popup_form .form-element {
       width: -webkit-calc(50% - 20px) !important;
@@ -4399,8 +4409,7 @@ footer {
     .popup-window-form #popup_form label {
       margin-bottom: 2px; }
   .popup-window-form-2 {
-    width: 90%;
-    z-index: 300;
+    width: 100%;
     margin-top: 0; }
     .popup-window-form-2 #popup_form-2 .form-element {
       width: -webkit-calc(50% - 20px) !important;
@@ -4658,12 +4667,12 @@ footer {
     right: 70px; }
   .result-slider .owl-prev {
     left: 70px; }
-  .video-popup video {
-    -o-object-fit: cover;
-       object-fit: cover;
-    -webkit-transform: none;
-        -ms-transform: none;
-            transform: none; } }
+  .video-popup {
+    background: #000; }
+    .video-popup video {
+      -webkit-transform: none;
+          -ms-transform: none;
+              transform: none; } }
 
 @media (max-width: 1024px) and (orientation: landscape) {
   .sixth-screen .answers .item:last-child {
