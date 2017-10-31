@@ -13,7 +13,7 @@ y),b(document.body).on("sticky_kit:recalc",y),a.on("sticky_kit:detach",H),setTim
 !function(n,e,s){function o(n){var e=r.className,s=Modernizr._config.classPrefix||"";if(c&&(e=e.baseVal),Modernizr._config.enableJSClass){var o=new RegExp("(^|\\s)"+s+"no-js(\\s|$)");e=e.replace(o,"$1"+s+"js$2")}Modernizr._config.enableClasses&&(e+=" "+s+n.join(" "+s),c?r.className.baseVal=e:r.className=e)}function a(n,e){return typeof n===e}function i(){var n,e,s,o,i,l,r;for(var c in f)if(f.hasOwnProperty(c)){if(n=[],e=f[c],e.name&&(n.push(e.name.toLowerCase()),e.options&&e.options.aliases&&e.options.aliases.length))for(s=0;s<e.options.aliases.length;s++)n.push(e.options.aliases[s].toLowerCase());for(o=a(e.fn,"function")?e.fn():e.fn,i=0;i<n.length;i++)l=n[i],r=l.split("."),1===r.length?Modernizr[r[0]]=o:(!Modernizr[r[0]]||Modernizr[r[0]]instanceof Boolean||(Modernizr[r[0]]=new Boolean(Modernizr[r[0]])),Modernizr[r[0]][r[1]]=o),t.push((o?"":"no-")+r.join("-"))}}var t=[],f=[],l={_version:"3.5.0",_config:{classPrefix:"",enableClasses:!0,enableJSClass:!0,usePrefixes:!0},_q:[],on:function(n,e){var s=this;setTimeout(function(){e(s[n])},0)},addTest:function(n,e,s){f.push({name:n,fn:e,options:s})},addAsyncTest:function(n){f.push({name:null,fn:n})}},Modernizr=function(){};Modernizr.prototype=l,Modernizr=new Modernizr;var r=e.documentElement,c="svg"===r.nodeName.toLowerCase();i(),o(t),delete l.addTest,delete l.addAsyncTest;for(var u=0;u<Modernizr._q.length;u++)Modernizr._q[u]();n.Modernizr=Modernizr}(window,document);
 
 function is_touch_device() {
-  return 'ontouchstart' in window        // works on most browsers 
+  return 'ontouchstart' in window        // works on most browsers
       || navigator.maxTouchPoints;       // works on IE10/11 and Surface
 };
 
@@ -47,14 +47,6 @@ function is_mobile_chrome() {
 	return navigator.userAgent.match('CriOS');
 }
 
-function stopBodyScrolling (bool) {
-    if (bool === true) {
-        document.body.addEventListener("touchmove", freezeVp, false);
-    } else {
-        document.body.removeEventListener("touchmove", freezeVp, false);
-    }
-}
-
 function isChrome() {
   var isChromium = window.chrome,
     winNav = window.navigator,
@@ -73,7 +65,7 @@ function isChrome() {
     isIEedge === false
   ) {
     return true;
-  } else { 
+  } else {
     return false;
   }
 }
@@ -228,7 +220,7 @@ $(function(){
 
 
 	// Слайдер фактов и его подстройка
-	$('.cool-slider .owl-carousel').owlCarousel({
+	$('.cool-slider:not(.beat):not(.beat) .owl-carousel').owlCarousel({
 		items: 1,
 		nav: true,
 		dots: true,
@@ -243,7 +235,7 @@ $(function(){
 	$(window).on('scroll',function(){
 		if($('.third-screen').length && !played) {
 			if(($(this).scrollTop() + $(this).height()) >= ($('.third-screen').offset().top + $('.third-screen').height()/4)) {
-				$('.cool-slider .owl-carousel').trigger('play.owl.autoplay');
+				$('.cool-slider:not(.beat) .owl-carousel').trigger('play.owl.autoplay');
 				played = true;
 			}
 		}
@@ -256,19 +248,19 @@ $(function(){
 
 	});
 
-	$('.cool-slider .owl-next,.cool-slider .owl-prev, .cool-slider .owl-dots').on('click',function(){
-		$('.cool-slider .owl-carousel').trigger('stop.owl.autoplay');
+	$('.cool-slider:not(.beat) .owl-next,.cool-slider:not(.beat) .owl-prev, .cool-slider:not(.beat) .owl-dots').on('click',function(){
+		$('.cool-slider:not(.beat) .owl-carousel').trigger('stop.owl.autoplay');
 	});
 
-	$('.cool-slider .owl-carousel').on('drag.owl.carousel',function(){
-		$('.cool-slider .owl-carousel').trigger('stop.owl.autoplay');
+	$('.cool-slider:not(.beat) .owl-carousel').on('drag.owl.carousel',function(){
+		$('.cool-slider:not(.beat) .owl-carousel').trigger('stop.owl.autoplay');
 	});
 
-	$('.cool-slider .owl-carousel').on('next.owl.carousel',function(){
+	$('.cool-slider:not(.beat) .owl-carousel').on('next.owl.carousel',function(){
 		$('.mobile-number-slider .owl-next').trigger('click');
 	});
 
-	$('.cool-slider .owl-carousel').on('prev.owl.carousel',function(){
+	$('.cool-slider:not(.beat) .owl-carousel').on('prev.owl.carousel',function(){
 		$('.mobile-number-slider .owl-prev').trigger('click');
 	});
 
@@ -350,18 +342,18 @@ $(function(){
 		$('.general-menu').addClass('visible');
 	});
 
-	$('.cool-slider .owl-carousel').on('change.owl.carousel initialized.owl.carousel', function(event) {
-		$('.cool-slider .owl-item .number').removeClass('visible');
-		$('.cool-slider .owl-item .photo').removeClass('visible');
+	$('.cool-slider:not(.beat) .owl-carousel').on('change.owl.carousel initialized.owl.carousel', function(event) {
+		$('.cool-slider:not(.beat) .owl-item .number').removeClass('visible');
+		$('.cool-slider:not(.beat) .owl-item .photo').removeClass('visible');
 
-		$('.cool-slider .owl-item.active:not(.revert) .number').addClass('visible');
-		$('.cool-slider .owl-item.active:not(.revert) .photo').addClass('visible');
+		$('.cool-slider:not(.beat) .owl-item.active:not(.revert) .number').addClass('visible');
+		$('.cool-slider:not(.beat) .owl-item.active:not(.revert) .photo').addClass('visible');
 
-		$('.cool-slider .owl-item.active.revert .photo').addClass('visible');
-		$('.cool-slider .owl-item.active.revert .number').addClass('visible');
+		$('.cool-slider:not(.beat) .owl-item.active.revert .photo').addClass('visible');
+		$('.cool-slider:not(.beat) .owl-item.active.revert .number').addClass('visible');
 	});
 
-	$('.cool-slider .owl-dot').each(function(){
+	$('.cool-slider:not(.beat) .owl-dot').each(function(){
 		$(this).text($(this).index()+1);
 	});
 
@@ -450,7 +442,7 @@ $(function(){
 				}
 			}, 3000);
 			$('.popup-thanks').addClass('visible');
-				
+
 		 $.ajax({
 		   type: "POST",
 		   data: $("#popup_form").serialize(),
@@ -472,7 +464,7 @@ $(function(){
 				}
 			}, 3000);
 			$('.popup-thanks').addClass('visible');
-				
+
 		 $.ajax({
 		   type: "POST",
 		   data: $("#popup_form-2").serialize(),
@@ -484,7 +476,7 @@ $(function(){
 		e.preventDefault();
 	});
 
-	
+
 	$('.qa-items .answer').each(function(){
 		if(!$(this).find('.switch-answer').length) {
 			$(this).find('.answer-text').addClass('sm');
@@ -654,7 +646,7 @@ $(function(){
 		} else {
 			$('.blog-list').isotope({filter: to_filter + ',.promo'});
 		}
-		
+
 	});
 
 	$('.city-select .selected-item').on('click',function(){
@@ -703,7 +695,7 @@ $(window).on('resize',function(){
 });
 
 var map;
-        
+
 function init() {
     // Basic options for a simple Google Map
     // For more options see: https://developers.google.com/maps/documentation/javascript/reference#MapOptions
@@ -714,14 +706,14 @@ function init() {
         disableDefaultUI: true,
 
         // The latitude and longitude to center the map (always required)
-        center: new google.maps.LatLng(50.492437, 30.496501), 
+        center: new google.maps.LatLng(50.492437, 30.496501),
 
-        // How you would like to style the map. 
+        // How you would like to style the map.
         // This is where you would paste any style found on Snazzy Maps.
         styles: [{"featureType":"water","elementType":"geometry","stylers":[{"color":"#e9e9e9"},{"lightness":17}]},{"featureType":"landscape","elementType":"geometry","stylers":[{"color":"#f5f5f5"},{"lightness":20}]},{"featureType":"road.highway","elementType":"geometry.fill","stylers":[{"color":"#ffffff"},{"lightness":17}]},{"featureType":"road.highway","elementType":"geometry.stroke","stylers":[{"color":"#ffffff"},{"lightness":29},{"weight":0.2}]},{"featureType":"road.arterial","elementType":"geometry","stylers":[{"color":"#ffffff"},{"lightness":18}]},{"featureType":"road.local","elementType":"geometry","stylers":[{"color":"#ffffff"},{"lightness":16}]},{"featureType":"poi","elementType":"geometry","stylers":[{"color":"#f5f5f5"},{"lightness":21}]},{"featureType":"poi.park","elementType":"geometry","stylers":[{"color":"#dedede"},{"lightness":21}]},{"elementType":"labels.text.stroke","stylers":[{"visibility":"on"},{"color":"#ffffff"},{"lightness":16}]},{"elementType":"labels.text.fill","stylers":[{"saturation":36},{"color":"#333333"},{"lightness":40}]},{"elementType":"labels.icon","stylers":[{"visibility":"off"}]},{"featureType":"transit","elementType":"geometry","stylers":[{"color":"#f2f2f2"},{"lightness":19}]},{"featureType":"administrative","elementType":"geometry.fill","stylers":[{"color":"#fefefe"},{"lightness":20}]},{"featureType":"administrative","elementType":"geometry.stroke","stylers":[{"color":"#fefefe"},{"lightness":17},{"weight":1.2}]}]
     };
 
-    // Get the HTML DOM element that will contain your map 
+    // Get the HTML DOM element that will contain your map
     // We are using a div with id="map" seen below in the <body>
     var mapElement = document.getElementById('map');
 

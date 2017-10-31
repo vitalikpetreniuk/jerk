@@ -26,14 +26,8 @@ gulp.task('scripts', function() {
         'app/libs/jquery.nicescroll/dist/jquery.nicescroll.min.js',
         'app/libs/mixitup/dist/mixitup.min.js',
         'app/libs/wow/dist/wow.min.js',
-        'app/libs/bLazy/blazy.js',
         'app/libs/isotope/dist/isotope.pkgd.min.js',
         'app/libs/jquery-mousewheel/jquery.mousewheel.min.js',
-        'app/libs/scrollmagic/scrollmagic/minified/ScrollMagic.min.js',
-        'app/libs/scrollmagic/scrollmagic/minified/plugins/animation.gsap.min.js',
-        'app/libs/scrollmagic/scrollmagic/minified/plugins/animation.velocity.min.js',
-        'app/libs/scrollmagic/scrollmagic/minified/plugins/debug.addIndicators.min.js',
-        'app/libs/gsap/src/minified/TweenMax.min.js',
         'app/libs/device.js/lib/device.min.js'
     ])
         .pipe(concat('libs.min.js')) // Собираем их в кучу в новом файле libs.min.js
@@ -73,7 +67,6 @@ gulp.task('build', [ 'sass', 'scripts'], function() {
         'app/css/reviews.css',
         'app/css/results.css',
         'app/css/libs.min.css',
-        'app/css/responsive.css'
         ])
     .pipe(gulp.dest('dist/css'))
 
