@@ -31,7 +31,8 @@ html {
  * Remove the margin in all browsers (opinionated).
  */
 body {
-  margin: 0; }
+  margin: 0;
+  background: #181818;}
 
 /**
  * Add the correct display in IE 9-.
@@ -3022,7 +3023,7 @@ footer {
   position: absolute;
   top: 0;
   content: '';
-  bottom: 0;
+  bottom: -10px;
   left: 0;
   width: 100%;
   background: rgba(0,0,0,.9);
