@@ -2254,7 +2254,7 @@ footer {
     margin-bottom: 35px;
     color: #fff; }
     footer .copyright-block a {
-      color: #fbeb22; }
+      color: #e73b23; }
 
 @media (max-width: 991px) {
   footer {
@@ -3677,7 +3677,9 @@ footer {
   footer {
     padding: 15px 25px;
     padding-top: 30px;
-    text-align: center; }
+    text-align: center;
+    height: auto;
+    padding-bottom: 110px; }
     footer .footer-block:not(.tab-transparent) {
       font-size: 14px;
       line-height: 17px;
@@ -3696,6 +3698,16 @@ footer {
         text-align: left;
         padding-left: 40px;
         padding-top: 15px; }
+    footer .copyright-block {
+      background: #1c1b1f;
+      position: absolute;
+      width: 100%;
+      left: 0;
+      padding: 15px;
+      margin-top: 0;
+      bottom: 0;
+      margin-bottom: 0;
+      padding-bottom: 35px; }
   .get-lesson {
     width: 225px;
     height: 30px; }

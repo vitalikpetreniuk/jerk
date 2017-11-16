@@ -636,6 +636,19 @@ $(function(){
 		masonry: {}
 	});
 
+	if(window.location.hash != '') {
+		var hash = window.location.hash;
+		hash = hash.replace('#','');
+		setTimeout(function(){
+			$('.blog-filters .filter-btn[data-filter=".'+hash+'"]').trigger('click');
+		},100);
+	}
+	else {
+		setTimeout(function(){
+			$('.blog-filters .filter-btn[data-filter="*"]').trigger('click');
+		},100);
+	}
+
 	$('.blog-filters .filter-btn').click(function(e) {
 		e.preventDefault();
 		$('.blog-filters .filter-btn').removeClass('active');

@@ -473,7 +473,31 @@
 
 .third-screen
 	background: url('../img/ts-image.jpg') no-repeat
-	background-size: 100% 100%;
+	background-size: 100% 100%
+
+.cool-slider-bg
+	position: absolute
+	width: 100%
+	left: 0
+	top: 0
+	bottom: 0
+
+.cool-slider-bg img 
+	position: absolute
+	top: 0
+	bottom: 0
+	min-width: 100%
+	left: 50%
+	transform: translateX(-50%)
+
+.cool-slider-bg::after
+	position: absolute
+	top: 0
+	content: ''
+	bottom: -10px
+	left: 0
+	width: 100%
+	background: rgba(0,0,0,.8)
 
 .cool-slider
 	height: 100%

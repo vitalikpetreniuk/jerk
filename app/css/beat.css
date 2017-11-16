@@ -31,8 +31,7 @@ html {
  * Remove the margin in all browsers (opinionated).
  */
 body {
-  margin: 0;
-  background: #181818;}
+  margin: 0; }
 
 /**
  * Add the correct display in IE 9-.
@@ -2256,7 +2255,7 @@ footer {
     margin-bottom: 35px;
     color: #fff; }
     footer .copyright-block a {
-      color: #fbeb22; }
+      color: #e73b23; }
 
 @media (max-width: 991px) {
   footer {
@@ -2875,16 +2874,13 @@ footer {
   -webkit-background-size: 100% 100%;
           background-size: 100% 100%; }
 
-.cool-slider {
-  height: 100%;
-  position: relative;}
 .cool-slider-bg {
   position: absolute;
   left: 0;
   top: 0;
   height: 100%;
-  width: 100%;
-}
+  width: 100%; }
+
 .cool-slider-bg::after {
   position: absolute;
   left: 0;
@@ -2892,16 +2888,19 @@ footer {
   content: '';
   width: 100%;
   bottom: 0;
-  background: rgba(0,0,0,.9);
-}
+  background: rgba(0, 0, 0, 0.8); }
+
 .cool-slider-bg img {
   min-width: 100%;
-  height: 100% ;
   position: absolute;
   top: 0;
   left: 50%;
-  transform: translateX(-50%);
-}
+  -webkit-transform: translateX(-50%);
+      -ms-transform: translateX(-50%);
+          transform: translateX(-50%); }
+
+.cool-slider {
+  height: 100%; }
   .cool-slider .owl-stage, .cool-slider .owl-stage-outer {
     height: 100%; }
   .cool-slider .owl-item {
@@ -2941,6 +2940,14 @@ footer {
       .cool-slider .item .photo-bg img {
         width: 100%;
         min-height: 100%; }
+      .cool-slider .item .photo-bg::after {
+        content: '';
+        position: absolute;
+        background: rgba(42, 42, 42, 0.9);
+        top: 0;
+        bottom: -1px;
+        width: 100%;
+        left: 0; }
     .cool-slider .item .text-block {
       max-width: 100%;
       z-index: 10;
@@ -4284,7 +4291,9 @@ footer {
   footer {
     padding: 15px 25px;
     padding-top: 30px;
-    text-align: center; }
+    text-align: center;
+    height: auto;
+    padding-bottom: 110px; }
     footer .footer-block:not(.tab-transparent) {
       font-size: 14px;
       line-height: 17px;
@@ -4303,6 +4312,16 @@ footer {
         text-align: left;
         padding-left: 40px;
         padding-top: 15px; }
+    footer .copyright-block {
+      background: #1c1b1f;
+      position: absolute;
+      width: 100%;
+      left: 0;
+      padding: 15px;
+      margin-top: 0;
+      bottom: 0;
+      margin-bottom: 0;
+      padding-bottom: 35px; }
   .get-lesson {
     width: 225px;
     height: 30px; }
