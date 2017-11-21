@@ -1713,45 +1713,10 @@ form {
     border: 2px solid #e73b23;
     border-top: 0;
     max-height: 530px;
-    padding-bottom: 30px; }
+    padding-bottom: 10px;
+    padding-top: 10px; }
     .select-block .items-wrapper.visible {
       visibility: visible; }
-    .select-block .items-wrapper::before {
-      content: '';
-      position: absolute;
-      left: 0;
-      width: 100%;
-      top: 0;
-      height: 60px;
-      z-index: 1;
-      /* Permalink - use to edit and share this gradient: http://colorzilla.com/gradient-editor/#ffffff+35,7db9e8+100&1+13,0+98 */
-      /* FF3.6-15 */
-      background: -webkit-linear-gradient(top, white 13%, rgba(255, 255, 255, 0.74) 35%, rgba(129, 187, 233, 0) 98%, rgba(125, 185, 232, 0) 100%);
-      /* Chrome10-25,Safari5.1-6 */
-      background: -webkit-gradient(linear, left top, left bottom, color-stop(13%, white), color-stop(35%, rgba(255, 255, 255, 0.74)), color-stop(98%, rgba(129, 187, 233, 0)), to(rgba(125, 185, 232, 0)));
-      background: -o-linear-gradient(top, white 13%, rgba(255, 255, 255, 0.74) 35%, rgba(129, 187, 233, 0) 98%, rgba(125, 185, 232, 0) 100%);
-      background: linear-gradient(to bottom, white 13%, rgba(255, 255, 255, 0.74) 35%, rgba(129, 187, 233, 0) 98%, rgba(125, 185, 232, 0) 100%);
-      /* W3C, IE10+, FF16+, Chrome26+, Opera12+, Safari7+ */
-      filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#ffffff', endColorstr='#007db9e8',GradientType=0 );
-      /* IE6-9 */ }
-    .select-block .items-wrapper::after {
-      content: '';
-      position: absolute;
-      left: 0;
-      width: 100%;
-      bottom: 0;
-      height: 60px;
-      z-index: 1;
-      /* Permalink - use to edit and share this gradient: http://colorzilla.com/gradient-editor/#ffffff+1,ffffff+100&0+2,1+98 */
-      /* FF3.6-15 */
-      background: -webkit-linear-gradient(top, rgba(255, 255, 255, 0) 1%, rgba(255, 255, 255, 0) 2%, white 98%, white 100%);
-      /* Chrome10-25,Safari5.1-6 */
-      background: -webkit-gradient(linear, left top, left bottom, color-stop(1%, rgba(255, 255, 255, 0)), color-stop(2%, rgba(255, 255, 255, 0)), color-stop(98%, white), to(white));
-      background: -o-linear-gradient(top, rgba(255, 255, 255, 0) 1%, rgba(255, 255, 255, 0) 2%, white 98%, white 100%);
-      background: linear-gradient(to bottom, rgba(255, 255, 255, 0) 1%, rgba(255, 255, 255, 0) 2%, white 98%, white 100%);
-      /* W3C, IE10+, FF16+, Chrome26+, Opera12+, Safari7+ */
-      filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#00ffffff', endColorstr='#ffffff',GradientType=0 );
-      /* IE6-9 */ }
     .select-block .items-wrapper .items {
       max-height: 500px; }
     .select-block .items-wrapper .select-item {
@@ -3306,9 +3271,18 @@ footer {
       margin-right: 35px;
       float: left;
       border: 5px solid #ececec;
-      position: relative; }
+      position: relative;
+      overflow: hidden;
+      width: 260px;
+      height: 450px; }
       .result-slider .item .before-photo img {
-        height: 450px; }
+        height: 100%;
+        width: auto;
+        position: absolute;
+        left: 50%;
+        -webkit-transform: translateX(-50%);
+            -ms-transform: translateX(-50%);
+                transform: translateX(-50%); }
       .result-slider .item .before-photo::before {
         position: absolute;
         content: 'ДО:';
@@ -3319,6 +3293,9 @@ footer {
         font-size: 20px; }
     .result-slider .item .after-photo {
       position: relative;
+      overflow: hidden;
+      width: 260px;
+      height: 450px;
       float: right;
       margin-left: 35px;
       border: 5px solid #fff; }
@@ -3331,15 +3308,20 @@ footer {
         color: #fff;
         font-size: 20px; }
       .result-slider .item .after-photo img {
-        height: 450px; }
+        height: 100%;
+        width: auto;
+        position: absolute;
+        left: 50%;
+        -webkit-transform: translateX(-50%);
+            -ms-transform: translateX(-50%);
+                transform: translateX(-50%); }
     .result-slider .item .contacts {
-      position: absolute;
+      position: relative;
       width: 100%;
       text-align: center;
-      top: 50%;
-      -webkit-transform: translateY(-50%);
-          -ms-transform: translateY(-50%);
-              transform: translateY(-50%); }
+      -webkit-transform: translateY(150%);
+          -ms-transform: translateY(150%);
+              transform: translateY(150%); }
       .result-slider .item .contacts img {
         display: inline-block;
         width: auto; }
@@ -5814,7 +5796,6 @@ footer {
       width: 120px;
       height: 220px; }
       .fourth-screen .result-slider .item .before-photo img, .fourth-screen .result-slider .item .after-photo img {
-        width: 100%;
         height: 100%; }
       .fourth-screen .result-slider .item .before-photo::before, .fourth-screen .result-slider .item .after-photo::before {
         font-size: 11px; }

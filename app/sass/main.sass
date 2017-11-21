@@ -415,8 +415,15 @@
 			float: left
 			border: 5px solid #ececec
 			position: relative
+			overflow: hidden
+			width: 260px
+			height: 450px
 			img
-				height: 450px
+				height: 100%
+				width: auto
+				position: absolute
+				left: 50%
+				transform: translateX(-50%)
 			&::before
 				position: absolute
 				content: 'ДО:'
@@ -427,6 +434,9 @@
 
 		.after-photo
 			position: relative
+			overflow: hidden
+			width: 260px
+			height: 450px
 			&::before
 				position: absolute
 				content: 'ПОСЛЕ:'
@@ -438,13 +448,16 @@
 			margin-left: 35px
 			border: 5px solid #fff
 			img
-				height: 450px
+				height: 100%
+				width: auto
+				position: absolute
+				left: 50%
+				transform: translateX(-50%)
 		.contacts
-			position: absolute
+			position: relative
 			width: 100%
 			text-align: center
-			top: 50%
-			transform: translateY(-50%)
+			transform: translateY(150%)
 			img
 				display: inline-block
 				width: auto
@@ -1376,6 +1389,9 @@
 				float: none
 				img
 					width: auto
+					position: absolute
+					left: 50%
+					transform: translateX(-50%)
 				display: inline-block
 				&::before
 					width: 100%
@@ -1531,8 +1547,11 @@
 					width: 120px
 					height: 220px
 					img
-						width: 100%
+						width: auto
 						height: 100%
+						position: absolute
+						left: 50%
+						transform: translateX(-50%)
 					&::before
 						font-size: 11px
 				.before-photo
