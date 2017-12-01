@@ -271,8 +271,17 @@ $(function(){
 		nav: true,
 		loop: true,
 		responsive: {
+			1920: {
+				stagePadding: 300,
+			},
+			1620: {
+				stagePadding: 240,
+			},
 			1440: {
 				stagePadding: 200,
+			},
+			1024: {
+				stagePadding: 80,
 			},
 		}
 		// autoplay: true,

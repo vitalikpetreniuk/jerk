@@ -4532,8 +4532,9 @@ footer {
           -ms-transform: translate(0);
               transform: translate(0);
       float: left; }
-    .result-slider .item .soc-icons {
-      display: none; }
+    .result-slider .item .soc-icons a svg {
+      height: 33px;
+      width: 33px; }
     .result-slider .item .name-age {
       margin-top: 25px; }
       .result-slider .item .name-age br {

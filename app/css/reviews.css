@@ -2499,7 +2499,8 @@ footer {
     -webkit-transform: translate(-50%);
         -ms-transform: translate(-50%);
             transform: translate(-50%);
-    min-width: 100%; }
+    min-width: 100%;
+    max-width: 150%; }
 
 .review-block {
   width: -webkit-calc(100% - 42%);
